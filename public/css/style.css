@@ -1,0 +1,17 @@
+.nav-list{
+    /* display:flex; */
+    /* flex-direction:row; */
+    
+    padding:0;
+    margin-left:70;
+}
+.nav-list li{
+    margin-right:1rem;
+
+}
+.nav-list li:last-child{
+    margin:0;
+}
+.nav-list li a{
+    text-decoration:none;
+}

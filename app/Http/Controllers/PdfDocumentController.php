@@ -30,7 +30,8 @@ class PdfDocumentController extends Controller
             $pdfDocument->save();
             //dd(   $pdfDocument);
 
-            
+            $pdfPath = public_path('storage/pdf/' . $pdfDocument->id . '.pdf');
+            file_put_contents($pdfPath, $contents);
         } catch (\Exception $e) {
 
             return response()->json(['error' => $e->getMessage()]);

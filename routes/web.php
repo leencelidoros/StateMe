@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Controller\Auth;
+use Illuminate\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +24,5 @@ Route::get('/listclient',[\App\Http\Controllers\ClientController::class,'clientL
 Route::get('/loans',[App\Http\Controllers\LoanController::class,'index'])->name('index');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

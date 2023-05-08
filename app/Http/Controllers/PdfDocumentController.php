@@ -30,5 +30,4 @@ class PdfDocumentController extends Controller
     
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }
-    
 }

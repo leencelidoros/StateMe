@@ -11,6 +11,8 @@ class PdfDocumentController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate
+        $request->validate(
+            'pdf_'
+        )
     }
 }

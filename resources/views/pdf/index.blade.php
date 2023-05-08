@@ -21,5 +21,5 @@
     @endif
 
 
-    <form action="{{route}}"></form>
+    <form action="{{route('pdf.store}}"></form>
 @endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PdfDocument;
 use Illuminate\Http\Request;
-use Illuminate\Support
+use Illuminate\Support\Faca
 
 class PdfDocumentController extends Controller
 {

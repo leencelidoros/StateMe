@@ -14,5 +14,5 @@
     @endif
 </div>
 
-$if(section)
+$if(session)
 @endsection

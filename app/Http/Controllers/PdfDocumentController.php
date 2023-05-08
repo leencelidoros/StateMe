@@ -15,6 +15,6 @@ class PdfDocumentController extends Controller
            [ 'pdf_file'=>'required|mimes:pdf|max:2048']
         );
 
-        $f=$request->file('pdf_file');
+        $pdf=$request->file('pdf_file');
     }
 }

@@ -24,7 +24,6 @@ class PdfDocumentController extends Controller
 
         $this->pdf = $request->file('pdf_file');
 
-        $pdfToText = new PdfToText();
         $pdfToText = new PdfToText($this->pdf->getPathname(), '/usr/bin/pdftotext');
 
         $text = $pdfToText->text();

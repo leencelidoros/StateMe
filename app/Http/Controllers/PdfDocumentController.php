@@ -1,11 +1,7 @@
-<?php
-
-namespace App\Http\Controllers;
-
 use App\Models\PdfDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use mikehaertl\pdftk\Pdf as Pdftk;
+use Spatie\PdfToText\Pdf as PdfToText;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PdfDocumentController extends Controller
@@ -13,6 +9,7 @@ class PdfDocumentController extends Controller
     public function index(){
        return view('pdf.index');
     }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -21,19 +18,10 @@ class PdfDocumentController extends Controller
 
         $pdf = $request->file('pdf_file');
         $pdfPath = $pdf->getPathname();
-        $pdftk = new Pdftk($pdfPath);
-        $dataFields = $pdftk->getDataFields();
-        $text = '';
-        if(is_array($dataFields)){
-            foreach ($dataFields as $fieldName => $fieldValue) {
-                if ($fieldName == 'Metadata') {
-                    $text .= $fieldValue;
-                } else {
-                    $text .= "\n" . $fieldName . ': ' . $fieldValue;
-                }
-            }
-        }else{
-            
+
+        $pdfToText = new PdfToText($pdfPath);
+        $text = $pdfToText->text();
+
         Log::debug("Extracted text : ",[$text]);
 
         $pdfDocument = new PdfDocument;
@@ -44,9 +32,5 @@ class PdfDocumentController extends Controller
         $pdfPath = $pdf->store('pdf', 'public');
 
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
-        }
-       
-      
     }
-
 }

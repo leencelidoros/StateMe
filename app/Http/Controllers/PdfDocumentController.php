@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class PdfDocumentController extends Controller
 {
-    public fun
+    public function index(){
+        reu
+    }
 }

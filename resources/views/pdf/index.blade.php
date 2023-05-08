@@ -3,6 +3,6 @@
 @section('content')
 
 <div class='container'>
- 2
+ @IF
 </div>
 @endsection

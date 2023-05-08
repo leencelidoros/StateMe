@@ -10,5 +10,5 @@ class PdfDocumentController extends Controller
         return view('pdf.index');
     }
 
-    public fu
+    public func
 }

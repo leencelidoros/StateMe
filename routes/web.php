@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/client',[\App\Http\Controllers\ClientController::class,'index'])->name('index');
 Route::get('/listclient',[\App\Http\Controllers\ClientController::class,'clientListing'])->name('show');

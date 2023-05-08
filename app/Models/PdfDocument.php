@@ -9,5 +9,5 @@ class PdfDocument extends Model
 {
     use HasFactory;
 
-     protected $fillable =['title','contents'
+     protected $fillable =['title','contents']
 }

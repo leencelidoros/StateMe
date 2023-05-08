@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div>
-    
+<div c>
+
 </div>
 @endsection()

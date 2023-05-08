@@ -19,7 +19,9 @@ class PdfDocumentController extends Controller
         $pdf=$request->file('pdf_file');
         $contents=file_get_contents($pdf->getRealPath());
         // $contents = mb_convert_encoding($contents, 'UTF-8', 'auto');
-        $convcontents = iconv('ISO-8859-1', 'UTF-8', $contents);
+        $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
+
+        if
 
         try {
             $pdfDocument = new PdfDocument;

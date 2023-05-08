@@ -20,7 +20,7 @@ class PdfDocumentController extends Controller
         $pdf = $request->file('pdf_file');
 
         $text = shell_exec("pdftotext {$pdf->getRealPath()} -");
-        Log::debug
+        Log::debug("Ex")
 
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $pdf->getClientOriginalName();

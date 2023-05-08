@@ -25,18 +25,18 @@ class PdfDocumentController extends Controller
         $dataFields = $pdftk->getDataFields();
         $text = '';
         if(is_array($dataFields)){
-            
+            foreach ($dataFields as $fieldName => $fieldValue) {
+                if ($fieldName == 'Metadata') {
+                    $text .= $fieldValue;
+                } else {
+                    $text .= "\n" . $fieldName . ': ' . $fieldValue;
+                }
+            }
         }else{
 
         }
        
-        foreach ($dataFields as $fieldName => $fieldValue) {
-            if ($fieldName == 'Metadata') {
-                $text .= $fieldValue;
-            } else {
-                $text .= "\n" . $fieldName . ': ' . $fieldValue;
-            }
-        }
+      
         Log::debug("Extracted text : ",[$text]);
 
         $pdfDocument = new PdfDocument;

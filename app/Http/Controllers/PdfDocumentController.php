@@ -24,7 +24,15 @@ class PdfDocumentController extends Controller
         $pdf_document->content=$contents;
         $pdf_document->save();
 
-
+        try {
+            $pdfDocument = new PdfDocument;
+            $pdfDocument->title = $pdf->getClientOriginalName();
+            $pdfDocument->content = $contents;
+            $pdfDocument->save();
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()]);
+        }
+        
         return redirect()->back()->with('success','pdf uploaded succesfully');
     }
 }

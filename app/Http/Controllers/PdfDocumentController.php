@@ -21,12 +21,10 @@ class PdfDocumentController extends Controller
 
         $text = shell_exec("pdftotext {$pdf->getRealPath()} -");
 
-       // $contents = file_get_contents($pdf->getRealPath());
-        // $conv_contents = iconv('ISO-8859-1', 'UTF-8', $text);
-    
+
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $pdf->getClientOriginalName();
-        $pdfDocument->content = $text ;
+        $pdfDocument->content =$text ;
         $pdfDocument->save();
     
         $pdfPath = $pdf->store('pdf', 'public');

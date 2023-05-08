@@ -24,7 +24,7 @@
     <form action="{{route('pdf.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="pdf_file">Select pdf </label>
+            <label for="pdf_file">Select pdf to Upload </label>
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>

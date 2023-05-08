@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +26,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('/', [\App\Http\Controllers\PdfDocumentController::class, 'index']);
+Route::post('/pdf', [\App\Http\Controllers\PdfDocumentController::class, 'store'])->name('pdf.store');

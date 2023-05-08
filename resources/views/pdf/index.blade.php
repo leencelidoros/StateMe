@@ -12,7 +12,7 @@
         </ul>
         </div>                                                                          
     @endif
-</div>
+
 
     $if(session('success'))
         <div class="alert alert-success">
@@ -29,4 +29,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>
+    </div>
 @endsection

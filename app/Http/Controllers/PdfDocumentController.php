@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class PdfDocumentController extends Controller
 {
     public function index(){
-      //  return view('pdf.index');
+      / return view('pdf.index');
     }
 
     public function store(Request $request){

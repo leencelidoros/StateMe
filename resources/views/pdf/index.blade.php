@@ -3,6 +3,6 @@
 @section('content')
 
 <div class='container'>
- @if($errors-)
+ @if($errors->any)
 </div>
 @endsection

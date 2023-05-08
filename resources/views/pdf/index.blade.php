@@ -27,5 +27,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>
+    @if(isset($pdfDocument))
+    <hr>
+    <h2>{{ $pdfDocument->title }}</h2>
+    <p>{!! nl2br(e($pdfDocument->content)) !!}</p>
+    @endif
 </div>
 @endsection

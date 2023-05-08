@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PdfDocument;
 use Illuminate\Http\Request;
-use Illuminate:
+use Illuminate:Sup
 
 class PdfDocumentController extends Controller
 {

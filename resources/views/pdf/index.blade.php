@@ -26,6 +26,6 @@
         <div class="form-group">
 
         </div>
-        <button type="sub">Upload</button>
+        <button type="submi">Upload</button>
     </form>
 @endsection

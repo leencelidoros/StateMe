@@ -12,7 +12,7 @@ class PdfDocumentController extends Controller
 
     public function store(Request $request){
         $validated=$request->validate(
-            'pdf_documment'=>'requiredmimes:pdf|2048';
+            'pdf_documment'=>'required|mimes:pdf|ma2048';
         )
     }
 }

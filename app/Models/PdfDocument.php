@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PdfDocument extends Model
 {
     use HasFactory;
-        protected $table='pdf'
+        protected $table='pdf_documen'
      protected $fillable =['title','contents'];
 }

@@ -25,6 +25,6 @@ class PdfDocumentController extends Controller
         $pdf_document->save();
 
 
-        return redirect()->back()->with('success','pdf ')
+        return redirect()->back()->with('success','pdf uploaded succesf')
     }
 }

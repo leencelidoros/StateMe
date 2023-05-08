@@ -16,5 +16,6 @@ class PdfDocumentController extends Controller
         );
 
         $pdf=$request->file('pdf_file');
+        $contents
     }
 }

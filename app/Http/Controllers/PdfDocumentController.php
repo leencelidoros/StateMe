@@ -1,4 +1,9 @@
 <?php
+namespace App\Http\Controllers;
+
+use App\Models\PdfDocument;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Smalot\PdfParser\Parser;
 
 class PdfDocumentController extends Controller

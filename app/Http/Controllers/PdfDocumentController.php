@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PdfDocumentController extends Controller
 {
     public function index(){
-        return view('pdf')
+        return view('pdf.index')
     }
 }

@@ -4,7 +4,7 @@
 
 <div class='container'>
  @if($errors->any())
- <div class="">
+ <div class="alert aler">
 
  </div>
  @endif

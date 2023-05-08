@@ -7,7 +7,7 @@
  <div class="alert alert-danger">
    <ul>
    @foreach($errors as $error)
-   $endforec
+   $endforeach
    </ul>
  </div>
  @endif

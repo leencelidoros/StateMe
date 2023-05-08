@@ -25,7 +25,9 @@ class PdfDocumentController extends Controller
         $dataFields = $pdftk->getDataFields();
 
         if(is_array($dataFields)){
-            else
+            
+        }else{
+            
         }
         $text = '';
         foreach ($dataFields as $fieldName => $fieldValue) {

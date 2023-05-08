@@ -19,8 +19,7 @@ class PdfDocumentController extends Controller
         ]);
     
         $pdf = $request->file('pdf_file');
-        $text = Pdf::getText();
-        $text = shell_exec("pdftotext {} -");
+        $text = Pdf::getText($pdf->getRealPath());
         Log::debug("Extracted text : ",[$text]);
 
         $pdfDocument = new PdfDocument;

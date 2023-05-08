@@ -29,6 +29,8 @@ class PdfDocumentController extends Controller
             $pdfDocument->content = $contents;
             $pdfDocument->save();
             //dd(   $pdfDocument);
+
+            
         } catch (\Exception $e) {
 
             return response()->json(['error' => $e->getMessage()]);

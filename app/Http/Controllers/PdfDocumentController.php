@@ -28,6 +28,7 @@ class PdfDocumentController extends Controller
             $pdfDocument->title = $pdf->getClientOriginalName();
             $pdfDocument->content = $contents;
             $pdfDocument->save();
+            dd
         } catch (\Exception $e) {
 
             return response()->json(['error' => $e->getMessage()]);

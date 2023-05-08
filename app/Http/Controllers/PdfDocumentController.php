@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PdfDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Spatie\PdfToText\Pdf;
 
 class PdfDocumentController extends Controller
 {
@@ -20,7 +21,7 @@ class PdfDocumentController extends Controller
         $pdf = $request->file('pdf_file');
 
         $text = shell_exec("pdftotext {$pdf->getRealPath()} -");
-        Log::debug("Extracted text : ",['$text']);
+        Log::debug("Extracted text : ",[$text]);
 
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $pdf->getClientOriginalName();

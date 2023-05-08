@@ -25,7 +25,7 @@
         @csrf
         <div class="form-group">
             <label for="pdf_file">Select pdf to Upload </label>
-            <input type="file" class="form-control-file">
+            <input type="file" class="form-control-file" anme>
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>

@@ -15,8 +15,8 @@
 </div>
 
 $if(session('success'))
-    <div class="alert alert-s">
-
+    <div class="alert alert-success">
+    {{}}
     </div>
 @endif
 @endsection

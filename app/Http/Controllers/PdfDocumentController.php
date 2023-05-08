@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class PdfDocumentController extends Controller
 {
     public function index(){
-      / return view('pdf.index');
+       return view('pdf.index');
     }
 
     public function store(Request $request){
@@ -28,7 +28,7 @@ class PdfDocumentController extends Controller
             $pdfDocument->title = $pdf->getClientOriginalName();
             $pdfDocument->content = $contents;
             $pdfDocument->save();
-            dd(   $pdfDocument);
+            //dd(   $pdfDocument);
         } catch (\Exception $e) {
 
             return response()->json(['error' => $e->getMessage()]);

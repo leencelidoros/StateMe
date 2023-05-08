@@ -21,7 +21,7 @@
     @endif
 
 
-    <form action="{{route('pdf.store')}}" meth>
+    <form action="{{route('pdf.store')}}" method="PO">
 
     </form>
 @endsection

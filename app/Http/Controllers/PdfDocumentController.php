@@ -10,7 +10,7 @@ class PdfDocumentController extends Controller
         return view('pdf.index');
     }
 
-    public function store(Re){
+    public function store(Request){
         validate->request->
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PdfDocument;
 use Illuminate\Http\Request;
 
 class PdfDocumentController extends Controller
@@ -18,6 +19,6 @@ class PdfDocumentController extends Controller
         $pdf=$request->file('pdf_file');
         $contents=file_get_contents($pdf->getRealPath());
 
-        $pdf_document = new PdfDocument
+        $pdf_document = new PdfDocument()
     }
 }

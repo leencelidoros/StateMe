@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Con
+use Illuminate\Http\Contr
 
 /*
 |--------------------------------------------------------------------------

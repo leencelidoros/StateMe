@@ -10,13 +10,13 @@
                 <li>{{$error}}</li>
                 $endforeach
         </ul>
-        </div>
+        </div>                                                                                                                                                                                                                                                                                                                                                 
     @endif
 </div>
 
-$if(session('success'))
-    <div class="alert alert-success">
-    {{section('success')}}
-    </div>
-@endif
+                                                $if(session('success'))
+                                                    <div class="alert alert-success">
+                                                    {{section('success')}}
+                                                    </div>
+                                                @endif
 @endsection

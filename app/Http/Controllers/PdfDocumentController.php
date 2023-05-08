@@ -22,6 +22,7 @@ class PdfDocumentController extends Controller
             'pdf_file' => 'required|mimes:pdf|max:2048'
         ]);
 
+        $this->pdf = $request->file('pdf_file');
 
 
         $pdfToText = new PdfToText($this->pdf->getPathname());

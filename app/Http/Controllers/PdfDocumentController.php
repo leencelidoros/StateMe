@@ -20,7 +20,7 @@ class PdfDocumentController extends Controller
         $pdf = $request->file('pdf_file');
 
         $text = shell_exec("pdftotext {$pdf->getRealPath()} -");
-        
+
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $pdf->getClientOriginalName();
         $pdfDocument->content =$text ;
@@ -31,31 +31,4 @@ class PdfDocumentController extends Controller
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }
     
-    // public function store(Request $request){
-    //     $validated=$request->validate(
-    //        [ 'pdf_file'=>'required|mimes:pdf|max:2048']
-    //     );
-
-    //     $pdf=$request->file('pdf_file');
-    //     $contents=file_get_contents($pdf->getRealPath());
-    //     // $contents = mb_convert_encoding($contents, 'UTF-8', 'auto');
-    //     $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
-
-    //     $contents=$conv_contents;
-    //     try {
-    //         $pdfDocument = new PdfDocument;
-    //         $pdfDocument->title = $pdf->getClientOriginalName();
-    //         $pdfDocument->content = $contents;
-    //         $pdfDocument->save();
-    //         //dd(   $pdfDocument);
-
-    //         $pdfPath = public_path('storage/pdf/' . $pdfDocument->id . '.pdf');
-    //         file_put_contents($pdfPath, $contents);
-    //     } catch (\Exception $e) {
-
-    //         return response()->json(['error' => $e->getMessage()]);
-    //     }
-        
-    //     return redirect()->back()->with('success','pdf uploaded succesfully');
-    // }
 }

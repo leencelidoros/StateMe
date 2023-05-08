@@ -23,7 +23,7 @@ class PdfDocumentController extends Controller
         $pdfPath = $pdf->getPathname();
         $pdftk = new Pdftk($pdfPath);
         $dataFields = $pdftk->getDataFields();
-
+        $text = '';
         if(is_array($dataFields)){
             
         }else{

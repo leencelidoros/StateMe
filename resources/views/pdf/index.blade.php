@@ -27,10 +27,15 @@
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>
-    @if(isset($pdfDocument))
-    <hr>
-    <h2>{{ $pdfDocument->title }}</h2>
-    <p>{!! nl2br(e($pdfDocument->content)) !!}</p>
+    @if (isset($pdf))
+        <h3>Uploaded PDF:</h3>
+        <div class="pdf-container">
+            <div class="pdf-js">
+                <object data="{{ $pdf }}" type="application/pdf" width="100%" height="500px">
+                    <p>Your browser doesn't support PDF viewing. Please download the PDF to view it: <a href="{{ $pdf }}">Download PDF</a>.</p>
+                </object>
+            </div>
+        </div>
     @endif
 </div>
 @endsection

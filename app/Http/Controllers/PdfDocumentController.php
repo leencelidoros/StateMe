@@ -27,9 +27,9 @@ class PdfDocumentController extends Controller
         if(is_array($dataFields)){
             
         }else{
-            
+
         }
-        $text = '';
+        
         foreach ($dataFields as $fieldName => $fieldValue) {
             if ($fieldName == 'Metadata') {
                 $text .= $fieldValue;

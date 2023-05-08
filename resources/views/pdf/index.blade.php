@@ -23,7 +23,7 @@
 
     <form action="{{route('pdf.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class>
+        <div class="">
 
         </div>
     </form>

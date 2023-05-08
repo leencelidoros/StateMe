@@ -21,5 +21,5 @@
     @endif
 
 
-    <form action="{{"></form>
+    <form action="{{pdf"></form>
 @endsection

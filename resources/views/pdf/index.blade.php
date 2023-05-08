@@ -5,4 +5,4 @@
 <div class='container'>
 
 </div>
-@endsection()
+@endsection

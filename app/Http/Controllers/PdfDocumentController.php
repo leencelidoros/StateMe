@@ -26,7 +26,7 @@ class PdfDocumentController extends Controller
     
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $pdf->getClientOriginalName();
-        $pdfDocument->content =   $text ;
+        $pdfDocument->content = $text ;
         $pdfDocument->save();
     
         $pdfPath = $pdf->store('pdf', 'public');

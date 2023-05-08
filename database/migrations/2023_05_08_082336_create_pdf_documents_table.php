@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pdf_documents', function (Blueprint $table) {
             $table->id();
-            $table->string()
+            $table->string('titk')
             $table->timestamps();
         });
     }

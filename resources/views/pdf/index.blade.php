@@ -15,5 +15,5 @@
 </div>
 
 $if(session('success'))
-@end
+@endif
 @endsection

@@ -24,8 +24,8 @@
     <form action="{{route('pdf.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-
+        
         </div>
-        <button type="submit" class="btn btn-pr">Upload</button>
+        <button type="submit" class="btn btn-primary">Upload</button>
     </form>
 @endsection

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PdfDocumentController extends Controller
 {
-    pru $pdf;
+    public $pdf;
     public function index(){
        return view('pdf.index');
     }

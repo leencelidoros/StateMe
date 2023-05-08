@@ -37,16 +37,6 @@ class PdfDocumentController extends Controller
         }
        
       
-        Log::debug("Extracted text : ",[$text]);
-
-        $pdfDocument = new PdfDocument;
-        $pdfDocument->title = $pdf->getClientOriginalName();
-        $pdfDocument->content = $text;
-        $pdfDocument->save();
-
-        $pdfPath = $pdf->store('pdf', 'public');
-
-        return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }
 
 }

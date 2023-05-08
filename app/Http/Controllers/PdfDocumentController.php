@@ -26,7 +26,8 @@ class PdfDocumentController extends Controller
             \Log::error('Failed to convert into UTF_8 encoding');
             return response()->json(['error','Failed to convert the inpout data into UTF-8']);
         }
-        $contents=    $conv_contents;
+
+        $contents=$conv_contents;
         try {
             $pdfDocument = new PdfDocument;
             $pdfDocument->title = $pdf->getClientOriginalName();

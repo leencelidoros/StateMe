@@ -11,6 +11,6 @@ class PdfDocumentController extends Controller
     }
 
     public function store(){
-        validate->request
+        validate->request->
     }
 }

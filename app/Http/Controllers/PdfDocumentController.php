@@ -1,4 +1,5 @@
-se App\Models\PdfDocument;
+<?php
+use App\Models\PdfDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Spatie\PdfToText\Pdf as PdfToText;

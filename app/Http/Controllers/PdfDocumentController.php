@@ -10,9 +10,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PdfDocumentController extends Controller
 {
-  private $pdf;
-    public function index(){
-       return view('pdf.index');
+    private $pdf;
+
+    public function index()
+    {
+        return view('pdf.index');
     }
 
     public function store(Request $request)
@@ -21,20 +23,20 @@ class PdfDocumentController extends Controller
             'pdf_file' => 'required|mimes:pdf|max:2048'
         ]);
 
-        $this->$pdf = $request->file('pdf_file');
-        $pdfPath = $this->$pdf->getPathname();
+        $this->pdf = $request->file('pdf_file');
+        $pdfPath = $this->pdf->getPathname();
 
         $pdfToText = new PdfToText($pdfPath);
-        $text = $pdfToText->text();
+        $text = $this->pdfToText->text();
 
-        Log::debug("Extracted text : ",[$text]);
+        Log::debug("Extracted text : ", [$text]);
 
         $pdfDocument = new PdfDocument;
-        $pdfDocument->title = $pdf->getClientOriginalName();
+        $pdfDocument->title = $this->pdf->getClientOriginalName();
         $pdfDocument->content = $text;
         $pdfDocument->save();
 
-        $pdfPath = $pdf->store('pdf', 'public');
+        $pdfPath = $this->pdf->store('pdf', 'public');
 
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }

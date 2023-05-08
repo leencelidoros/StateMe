@@ -22,6 +22,9 @@ class PdfDocumentController extends Controller
         $pdf_document = new PdfDocument();
         $pdf_document ->title= file_get_contents($pdf->getClientOriginalName());
         $pdf_document->content=$contents;
-        $pdf_document->save
+        $pdf_document->save();
+
+
+        
     }
 }

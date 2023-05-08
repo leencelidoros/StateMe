@@ -19,10 +19,7 @@ class PdfDocumentController extends Controller
         $pdf=$request->file('pdf_file');
         $contents=file_get_contents($pdf->getRealPath());
 
-        $pdf_document = new PdfDocument();
-        $pdf_document ->title= $pdf->getClientOriginalName();
-        $pdf_document->content=$contents;
-        $pdf_document->save();
+    
 
         try {
             $pdfDocument = new PdfDocument;

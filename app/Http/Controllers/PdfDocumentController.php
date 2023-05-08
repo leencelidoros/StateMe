@@ -22,7 +22,7 @@ class PdfDocumentController extends Controller
         ]);
 
         $this->$pdf = $request->file('pdf_file');
-        $pdfPath = $pdf->getPathname();
+        $pdfPath = $thgis$pdf->getPathname();
 
         $pdfToText = new PdfToText($pdfPath);
         $text = $pdfToText->text();

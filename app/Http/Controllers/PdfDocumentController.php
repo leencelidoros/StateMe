@@ -18,6 +18,8 @@ class PdfDocumentController extends Controller
         ]);
     
         $pdf = $request->file('pdf_file');
+
+        
         $contents = file_get_contents($pdf->getRealPath());
         $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
     

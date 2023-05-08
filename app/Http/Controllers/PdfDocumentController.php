@@ -1,5 +1,3 @@
-<?php
-
 namespace App\Http\Controllers;
 
 use App\Models\PdfDocument;
@@ -10,7 +8,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PdfDocumentController extends Controller
 {
-    private $pdf;
+    private $pdf = null;
 
     public function index()
     {
@@ -25,7 +23,9 @@ class PdfDocumentController extends Controller
 
         $this->pdf = $request->file('pdf_file');
 
-        $pdfToText = new PdfToText($this->pdf->getPathname());
+        $pdfToText = new PdfToText();
+        $pdfToText = new PdfToText($this->pdf->getPathname(), '/usr/bin/pdftotext');
+
         $text = $pdfToText->text();
 
         Log::debug("Extracted text : ", [$text]);

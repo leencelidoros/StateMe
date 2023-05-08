@@ -17,6 +17,7 @@ class PdfDocumentController extends Controller
         return view('pdf.index');
     }
 
+    
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -40,7 +41,6 @@ class PdfDocumentController extends Controller
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }
     
-
 
    
 }

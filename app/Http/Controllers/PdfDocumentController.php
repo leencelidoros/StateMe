@@ -18,14 +18,16 @@ class PdfDocumentController extends Controller
 
         $pdf=$request->file('pdf_file');
         $contents=file_get_contents($pdf->getRealPath());
-
+        // $contents = mb_convert_encoding($contents, 'UTF-8', 'auto');
+        $contents = iconv('ISO-8859-1', 'UTF-8', $contents);
 
         try {
             $pdfDocument = new PdfDocument;
             $pdfDocument->title = $pdf->getClientOriginalName();
             $pdfDocument->content = $contents;
             $pdfDocument->save();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
+
             return response()->json(['error' => $e->getMessage()]);
         }
         

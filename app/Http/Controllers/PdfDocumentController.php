@@ -13,6 +13,4 @@ class PdfDocumentController extends Controller
     public function index(){
        return view('pdf.index');
     }
-
-
 }

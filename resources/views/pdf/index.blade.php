@@ -26,6 +26,6 @@
         <div class="form-group">
 
         </div>
-        button
+        <button>sub</button>
     </form>
 @endsection

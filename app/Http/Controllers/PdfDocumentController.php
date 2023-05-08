@@ -22,11 +22,6 @@ class PdfDocumentController extends Controller
         // $contents = mb_convert_encoding($contents, 'UTF-8', 'auto');
         $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
 
-        if($conv_contents == false){
-            \Log::error('Failed to convert into UTF_8 encoding');
-            return response()->json(['error','Failed to convert the inpout data into UTF-8']);
-        }
-
         $contents=$conv_contents;
         try {
             $pdfDocument = new PdfDocument;

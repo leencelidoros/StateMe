@@ -22,31 +22,25 @@ class PdfDocumentController extends Controller
         $validated = $request->validate([
             'pdf_file' => 'required|mimes:pdf|max:2048'
         ]);
-        
-       
+    
         $this->pdf = $request->file('pdf_file');
-
+    
         $pdfToText = new PdfToText($this->pdf->getPathname());
         $text = $pdfToText->text();
-        
-
-
-        $text = $this->pdf->text();
-
-        // $pdfPath = $this->pdf->getPathname();
-
-        // $pdfToText = new PdfToText($pdfPath);
-        // $text = $pdfToText->text();
-
+    
         Log::debug("Extracted text : ", [$text]);
-
+    
         $pdfDocument = new PdfDocument;
         $pdfDocument->title = $this->pdf->getClientOriginalName();
         $pdfDocument->content = $text;
         $pdfDocument->save();
-
+    
         $pdfPath = $this->pdf->store('pdf', 'public');
-
+    
         return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
     }
+    
+
+
+   
 }

@@ -23,6 +23,8 @@ class PdfDocumentController extends Controller
         $pdfPath = $pdf->getPathname();
         $pdftk = new Pdftk($pdfPath);
         $dataFields = $pdftk->getDataFields();
+
+        if()
         $text = '';
         foreach ($dataFields as $fieldName => $fieldValue) {
             if ($fieldName == 'Metadata') {

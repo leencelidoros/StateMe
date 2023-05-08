@@ -22,7 +22,7 @@ class PdfDocumentController extends Controller
         $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
 
         if($conv_contents == false){
-            \Log::error('')
+            \Log::error('Failed to convert')
         }
 
         try {

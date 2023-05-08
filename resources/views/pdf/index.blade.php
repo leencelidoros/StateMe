@@ -4,6 +4,7 @@
 
 <div class='container'>
  @if($errors->any())
+ div
  @endif
 </div>
 @endsection

@@ -19,7 +19,6 @@ class PdfDocumentController extends Controller
         $pdf=$request->file('pdf_file');
         $contents=file_get_contents($pdf->getRealPath());
 
-    
 
         try {
             $pdfDocument = new PdfDocument;

@@ -4,8 +4,8 @@
 
 <div class='container'>
  @if($errors->any())
- <div>
-    
+ <div class="">
+
  </div>
  @endif
 </div>

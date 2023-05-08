@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
         "mikehaertl/php-pdftk": "^0.13.0",
+        "smalot/pdfparser": "*",
         "spatie/pdf-to-text": "^1.52"
     },
     "require-dev": {

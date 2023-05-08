@@ -1,15 +1,9 @@
 <?php
-namespace App\Http\Controllers;
-
-use App\Models\PdfDocument;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Spatie\PdfToText\Pdf as PdfToText;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Smalot\PdfParser\Parser;
 
 class PdfDocumentController extends Controller
 {
-    private $pdf = null;
+    private $pdf;
 
     public function index()
     {
@@ -24,8 +18,9 @@ class PdfDocumentController extends Controller
 
         $this->pdf = $request->file('pdf_file');
 
-        $pdfToText = new PdfToText($this->pdf->getPathname());
-        $text = $pdfToText->text();
+        $parser = new Parser();
+        $pdf = $parser->parseFile($this->pdf->getPathname());
+        $text = $pdf->getText();
 
         Log::debug("Extracted text : ", [$text]);
 

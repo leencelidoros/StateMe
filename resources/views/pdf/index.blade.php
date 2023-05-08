@@ -21,5 +21,5 @@
     @endif
 
 
-    form
+    <form action="{{"></form>
 @endsection

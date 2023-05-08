@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PdfDocument;
 use Illuminate\Http\Request;
-use Illuminate\Support\FLog;
+use Illuminate\Support\Facades\Log;
 
 class PdfDocumentController extends Controller
 {
@@ -26,7 +26,7 @@ class PdfDocumentController extends Controller
             \Log::error('Failed to convert into UTF_8 encoding');
             return response()->json(['error','Failed to convert the inpout data into UTF-8']);
         }
-
+ $c
         try {
             $pdfDocument = new PdfDocument;
             $pdfDocument->title = $pdf->getClientOriginalName();

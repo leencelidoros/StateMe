@@ -22,7 +22,7 @@ class PdfDocumentController extends Controller
         $validated = $request->validate([
             'pdf_file' => 'required|mimes:pdf|max:2048'
         ]);
-        $this->pdf->setPdf(ge);
+        $this->pdf->getPathname();
         $text = $this->pdf->text();
 
         $this->pdf = $request->file('pdf_file');

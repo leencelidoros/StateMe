@@ -21,7 +21,7 @@ class PdfDocumentController extends Controller
         // $contents = mb_convert_encoding($contents, 'UTF-8', 'auto');
         $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
 
-        if
+        if($con)
 
         try {
             $pdfDocument = new PdfDocument;

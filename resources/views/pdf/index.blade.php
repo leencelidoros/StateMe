@@ -7,7 +7,7 @@
  <div class="alert alert-danger">
    <ul>
    @foreach($errors as $error)
-   $endforec
+   $end.forEach((value, index, array) => {})
    </ul>
  </div>
  @endif

@@ -21,7 +21,7 @@
     @endif
 
 
-    <form action="{{route('pdf.store')}}" method="POST" enctype="mul">
-
+    <form action="{{route('pdf.store')}}" method="POST" enctype="multipart/form-data">
+        
     </form>
 @endsection

@@ -22,8 +22,7 @@ class PdfDocumentController extends Controller
         $conv_contents = iconv('ISO-8859-1', 'UTF-8', $contents);
 
         if($conv_contents == false){
-            \Log::error('Failed to convert into UTF_8 encoding');
-            return ->responce()->json(['error','Faile to convert the inpout data into IU'])
+            \Log::error('Failed to convert into UTF_8 encoding');UTF '])
         }
 
         try {

@@ -15,7 +15,7 @@
 </div>
 
 $if(session('success'))
-    <div class>
+    <div class="al">
 
     </div>
 @endif

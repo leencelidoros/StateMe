@@ -12,30 +12,54 @@ class PdfDocumentController extends Controller
 
     public function index()
     {
-        return view('pdf.index');
+
+        $pdfs=PdfDocument::all();
+        //dd($pdfs);
+        return view('pdf.index',compact('pdfs'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'pdf_file' => 'required|mimes:pdf|max:2048'
+            'mpesa_pdf' => 'required|mimes:pdf|max:2048',
+            'bank_pdf' => 'required|mimes:pdf|max:2048'
         ]);
 
-        $this->pdf = $request->file('pdf_file');
+        // Processing the Mpesa data and saving it
+        $this->mpesaPDF = $request->file('mpesa_pdf'); 
 
-        $parser = new Parser();
-        $pdf = $parser->parseFile($this->pdf->getPathname());
-        $text = $pdf->getText();
+        $mpesaParser = new Parser();
+        $mpesaPDF = $mpesaParser->parseFile($this->mpesaPDF->getPathname());
+        $mpesaText = $mpesaPDF->getText();
 
-        Log::debug("Extracted text : ", [$text]);
+        Log::debug("Extracted text : ", [$mpesaText]);
 
         $pdfDocument = new PdfDocument;
-        $pdfDocument->title = $this->pdf->getClientOriginalName();
-        $pdfDocument->content = $text;
+        $pdfDocument->title = $this->mpesaPDF->getClientOriginalName();
+        $pdfDocument->content = $mpesaText;
         $pdfDocument->save();
 
-        $pdfPath = $this->pdf->store('pdf', 'public');
+        // Mpessa Path
+        $mpesaPath= $this->mpesaPDF->store('pdf','public');
 
-        return redirect()->back()->with('success', 'PDF uploaded successfully')->with('pdf', asset('storage/'.$pdfPath));
+         // Processing the Mpesa data and saving it
+        $this->bankPDF= $request->file('bank_pdf');
+
+        $bankParser= new Parser();
+        $bankPDF = $bankParser->parseFile($this->bankPDF->getPathName());
+        $bankText = $bankPDF->getText();
+
+        Log::debug("Extracted text : ", [$bankText]);
+
+        $pdfDocument = new PdfDocument;
+        $pdfDocument->title = $this->bankPDF->getClientOriginalName();
+        $pdfDocument->content = $bankText;
+        $pdfDocument->save();
+        
+        // Bank Path
+        $bankPath =$this->bankPDF->store('pdf','public');
+        
+        // $pdfPath = $this->pdf->store('pdf', 'public');
+        return redirect()->back()->with('success', 'PDFs uploaded successfully')->with('mpesa_pdf', asset('storage/'.$mpesaPath))->with('bank_pdf', asset('storage/'.$bankPath));
     }
 }
